@@ -1,0 +1,32 @@
+# application.yml
+
+spring:
+  application:
+    name: MediKeep
+  # ==================================
+  # DATABASE (MySQL)
+  # ==================================
+  datasource:
+    url: jdbc:mysql://localhost:3306/medikeep?serverTimezone=UTC
+    username: root
+    password: ${DB_PASSWORD} # .env 파일
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ==================================
+  # JPA & HIBERNATE
+  # ==================================
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+# ==================================
+# JWT
+# ==================================
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY} # .env 파일
