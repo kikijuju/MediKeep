@@ -29,4 +29,4 @@ spring:
 # ==================================
 jwt:
   secret:
-    key: ${JWT_SECRET_KEY} # .env 파일
+    key: ${JWT_SECRET_KEY:bWVkaWtlZXAtaXMtYW4tYXdlc29tZS1wcm9qZWN0LWZvci1tYW5hZ2luZy1tZWRpY2F0aW9u} # .env 파일
