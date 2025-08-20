@@ -24,7 +24,7 @@ public class EnvLogController {
 
     private final EnvLogService envLogService;
 
-    @Operation(summary = "온습도 업로드", description = "앱에서 10분마다 수집된 온도/습도를 업로드")
+    @Operation(summary = "온습도/자석 업로드", description = "앱에서 10분마다 수집된 온도/습도를 업로드")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "업로드 성공")
     })

@@ -23,12 +23,12 @@ public class EnvLogService {
     private final UserRepository userRepository;
 
     public EnvLog upload(User user, EnvUploadRequestDto req) {
-        User ref = userRepository.getReferenceById(user.getId());
 
         EnvLog log = EnvLog.builder()
-                .user(ref)
+                .user(user)
                 .temperature(req.getTemperature())
                 .humidity(req.getHumidity())
+                .magnet(req.getMagnet())
                 .build();
 
         return envLogRepository.save(log);

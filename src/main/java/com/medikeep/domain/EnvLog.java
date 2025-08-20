@@ -23,6 +23,12 @@ public class EnvLog extends BaseTimeEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(nullable = false)
     private Double temperature;
+
+    @Column(nullable = false)
     private Double humidity;
+
+    @Column(nullable = false)
+    private Integer magnet;
 }

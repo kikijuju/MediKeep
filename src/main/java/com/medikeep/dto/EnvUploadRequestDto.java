@@ -7,4 +7,5 @@ import lombok.Setter;
 public class EnvUploadRequestDto {
     private Double temperature;
     private Double humidity;
+    private Integer magnet;
 }

@@ -12,6 +12,7 @@ public class EnvLogResponseDto {
     private Long id;
     private Double temperature;
     private Double humidity;
+    private Integer magnet;
     private LocalDateTime createdAt;
 
     public static EnvLogResponseDto from(EnvLog e) {
@@ -19,6 +20,7 @@ public class EnvLogResponseDto {
                 .id(e.getId())
                 .temperature(e.getTemperature())
                 .humidity(e.getHumidity())
+                .magnet(e.getMagnet())
                 .createdAt(e.getCreatedAt())
                 .build();
     }
