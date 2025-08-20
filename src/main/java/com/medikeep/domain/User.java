@@ -7,7 +7,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,8 +30,6 @@ public class User extends BaseTimeEntity {
     @Column(nullable = false)
     private String name;
 
-    private LocalDate birthday;
-
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Medication> medications = new ArrayList<>();
 
@@ -46,10 +43,9 @@ public class User extends BaseTimeEntity {
     private DeviceStatus deviceStatus;
 
     @Builder
-    public User(String email, String password, String name, LocalDate birthday) {
+    public User(String email, String password, String name) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.birthday = birthday;
     }
 }
