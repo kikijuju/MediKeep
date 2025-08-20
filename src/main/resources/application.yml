@@ -1,15 +1,21 @@
-# application.yml
+server:
+  port: 8080
+  address: 0.0.0.0
 
+# ==================================
+# APP
+# ==================================
 spring:
   application:
     name: MediKeep
+
   # ==================================
   # DATABASE (MySQL)
   # ==================================
   datasource:
-    url: jdbc:mysql://localhost:3306/medikeep?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/medikeep?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: ${DB_PASSWORD} # .env 파일
+    password: "youngh29ktj!"   # 비밀번호 특수문자 있으면 따옴표 필수
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   # ==================================
@@ -29,4 +35,4 @@ spring:
 # ==================================
 jwt:
   secret:
-    key: ${JWT_SECRET_KEY:bWVkaWtlZXAtaXMtYW4tYXdlc29tZS1wcm9qZWN0LWZvci1tYW5hZ2luZy1tZWRpY2F0aW9u} # .env 파일
+    key: ${JWT_SECRET_KEY:bWVkaWtlZXAtaXMtYW4tYXdlc29tZS1wcm9qZWN0LWZvci1tYW5hZ2luZy1tZWRpY2F0aW9u}
