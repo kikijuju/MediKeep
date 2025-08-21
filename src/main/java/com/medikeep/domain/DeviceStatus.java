@@ -19,7 +19,7 @@ public class DeviceStatus {
 
     private Double temperature;
     private Double humidity;
-    private Boolean hasMedication;
+    private Boolean isPillPresent;
 
     @Column(nullable = false)
     private LocalDateTime updatedAt;
@@ -29,19 +29,18 @@ public class DeviceStatus {
     private User user;
 
     @Builder
-    public DeviceStatus(Double temperature, Double humidity, Boolean hasMedication, User user) {
+    public DeviceStatus(Double temperature, Double humidity, Boolean isPillPresent, User user) {
         this.temperature = temperature;
         this.humidity = humidity;
-        this.hasMedication = hasMedication;
+        this.isPillPresent = isPillPresent;
         this.user = user;
         this.updatedAt = LocalDateTime.now();
     }
 
-    // 상태 업데이트 메서드 수정
-    public void updateStatus(Double temperature, Double humidity, Boolean hasMedication) {
+    public void updateStatus(Double temperature, Double humidity, Boolean isPillPresent) {
         this.temperature = temperature;
         this.humidity = humidity;
-        this.hasMedication = hasMedication;
+        this.isPillPresent = isPillPresent;
         this.updatedAt = LocalDateTime.now();
     }
 }

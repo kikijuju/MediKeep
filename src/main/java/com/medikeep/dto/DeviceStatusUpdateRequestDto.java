@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class DeviceStatusUpdateRequestDto {
-    private Long userId;        // 어떤 사용자의 장치인지 식별
-    private Double temperature;   // 온도
-    private Double humidity;      // 습도
-    private Boolean hasMedication; // 약 유무
+    private Long userId;
+    private Double temperature;
+    private Double humidity;
+    private Boolean isPillPresent;
 }

@@ -15,7 +15,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/medikeep?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
-    password: "youngh29ktj!"   # 비밀번호 특수문자 있으면 따옴표 필수
+    password: ${DB_PASSWORD}   # 비밀번호 특수문자 있으면 따옴표 필수
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   # ==================================

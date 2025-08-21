@@ -23,15 +23,11 @@ public class DeviceController {
 
     private final DeviceService deviceService;
 
-    @Operation(summary = "장치 상태 업데이트", description = "ESP32 장치로부터 현재 상태(온도, 습도, 약 유무)를 주기적으로 수신하여 업데이트. 인증 필요 X")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "상태 업데이트 성공"),
-            @ApiResponse(responseCode = "400", description = "요청 데이터 오류 (예: 존재하지 않는 userId)")
-    })
+    @Operation(summary = "장치 상태 업데이트", description = "ESP32 장치로부터 현재 상태를 수신하여 업데이트하고, 약 복용을 감지합니다.")
     @PostMapping("/status")
     public ResponseEntity<ApiResponseDto<Void>> updateDeviceStatus(@RequestBody DeviceStatusUpdateRequestDto requestDto) {
         try {
-            deviceService.updateDeviceStatus(requestDto);
+            deviceService.updateDeviceStatusAndLogIntake(requestDto);
             return ResponseEntity.ok(new ApiResponseDto<>(HttpStatus.OK, "장치 상태가 성공적으로 업데이트되었습니다.", null));
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(new ApiResponseDto<>(HttpStatus.BAD_REQUEST, e.getMessage(), null));
